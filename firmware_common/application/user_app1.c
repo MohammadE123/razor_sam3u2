@@ -92,6 +92,36 @@ Promises:
 */
 void UserApp1Initialize(void)
 {
+  LedOff(CYAN);
+  LedOff(GREEN);
+  LedOff((YELLOW);
+  LedOff(ORANGE);
+  LedOff(RED);
+  LedOff(BLUE);
+  LedOff(WHITE);
+  LedOff(PURPLE);
+  
+  //Backlight to white
+  LedOn(LCD_RED);
+  LedOn(LCD_GREEN);
+  LedOn(LCD_BLUE);
+  
+  static u16 u16blinkCount = 0;
+  static u8 u8Counter = 0;
+  
+  u16blinkCount++;
+  if(u16blinkCount == 250)
+  {
+    u16blinkCount = 0;
+    
+    u8Counter++;
+    if(u8Counter == 16)
+    {
+      u8Counter = 0;
+    }
+   if(u8counter & 0x01)
+  }
+  
   /* If good initialization, set state to Idle */
   if( 1 )
   {
@@ -102,6 +132,7 @@ void UserApp1Initialize(void)
     /* The task isn't properly initialized, so shut it down and don't run */
     UserApp1_pfStateMachine = UserApp1SM_Error;
   }
+  
 
 } /* end UserApp1Initialize() */
 
